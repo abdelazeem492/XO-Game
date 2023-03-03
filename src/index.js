@@ -1,0 +1,19 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { ModalState } from "./context/ModalContext";
+import { GameState } from "./context/GameContext";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <ModalState>
+      <GameState>
+        <App />
+      </GameState>
+    </ModalState>
+  </React.StrictMode>
+);
+serviceWorkerRegistration.register();
